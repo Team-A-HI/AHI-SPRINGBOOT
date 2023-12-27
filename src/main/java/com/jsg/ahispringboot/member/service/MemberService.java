@@ -15,11 +15,11 @@ public interface MemberService {
 
     void findPwd(MemberDto memberDto);
 
-    boolean phoneNumberDuplicationCheck(Long phoneNumber);
+    boolean phoneNumberDuplicationCheck(String phoneNumber);
 
     void memberInfoUpdate(Authentication authentication,MemberDto memberDto);
 
-    void companyInfoUpdate(CompanyDto companyDto, Authentication authentication);
+    // void companyInfoUpdate(CompanyDto companyDto, Authentication authentication);
 
     void withdrawal(MemberDto memberDto);
 }
