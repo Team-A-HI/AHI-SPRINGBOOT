@@ -27,19 +27,20 @@ public class MemberController {
         return true;
     }
     @GetMapping("/phoneNumber_duplication_check")
-    public boolean phoneNumberDuplicationCheck(@RequestParam Long phoneNumber) {
+    public boolean phoneNumberDuplicationCheck(@RequestParam String phoneNumber) {
         boolean result = memberServiceImpl.phoneNumberDuplicationCheck(phoneNumber);
         return result;
     }
     @PostMapping("/signup")
     public String memberSignup(@RequestBody MemberDto memberDto) {
-        memberServiceImpl.signup(memberDto);
+        log.info("전번={}",memberDto.getPhoneNumber().toString());
+         memberServiceImpl.signup(memberDto);
         return "";
     }
 
     @PostMapping("/signupCompany")
     public String companySignup(@RequestBody CompanyDto companyDto) {
-
+        log.info("전번={}",companyDto.getPhoneNumber().toString());
         memberServiceImpl.companySignup(companyDto);
         return "";
     }
@@ -81,27 +82,27 @@ public class MemberController {
     public void memberInfoUpdate(@RequestBody MemberDto memberDto,Authentication Authentication){
         memberServiceImpl.memberInfoUpdate(Authentication,memberDto);
     }
-    @GetMapping("/member/infoCompany")
-    public CompanyDto company(@AuthenticationPrincipal CustomUserDetail customUserDetail){
-        CompanyDto companyDto = CompanyDto
-                .builder()
-                .companyId(customUserDetail.getPk())
-                .email(customUserDetail.getUsername())
-                .name(customUserDetail.getRealName())
-                .phoneNumber(customUserDetail.getPhoneNumber())
-                .company(customUserDetail.company())
-                .companyType(customUserDetail.companyType())
-                .employeesNumber(customUserDetail.employeesNumber())
-                .establishmentDate(customUserDetail.establishmentDate())
-                .companyHomepage(customUserDetail.companyHomepage())
-                .build();
-        return companyDto;
-    }
-    @PutMapping("/member/company_info_update")
-    public void companyInfoUpdate(@RequestBody CompanyDto companyDto,Authentication authentication){
-        memberServiceImpl.companyInfoUpdate(companyDto, authentication);
+    // @GetMapping("/member/infoCompany")
+    // public CompanyDto company(@AuthenticationPrincipal CustomUserDetail customUserDetail){
+    //     CompanyDto companyDto = CompanyDto
+    //             .builder()
+    //             .companyId(customUserDetail.getPk())
+    //             .email(customUserDetail.getUsername())
+    //             .name(customUserDetail.getRealName())
+    //             .phoneNumber(customUserDetail.getPhoneNumber())
+    //             .company(customUserDetail.company())
+    //             .companyType(customUserDetail.companyType())
+    //             .employeesNumber(customUserDetail.employeesNumber())
+    //             .establishmentDate(customUserDetail.establishmentDate())
+    //             .companyHomepage(customUserDetail.companyHomepage())
+    //             .build();
+    //     return companyDto;
+    // }
+    // @PutMapping("/member/company_info_update")
+    // public void companyInfoUpdate(@RequestBody CompanyDto companyDto,Authentication authentication){
+    //     memberServiceImpl.companyInfoUpdate(companyDto, authentication);
 
-    }
+    // }
     @DeleteMapping("/member/withdrawal")
     public boolean withdrawal(@RequestBody MemberDto memberDto){
         memberServiceImpl.withdrawal(memberDto);
