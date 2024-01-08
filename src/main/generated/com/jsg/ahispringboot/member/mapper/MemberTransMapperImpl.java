@@ -8,7 +8,7 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-01-03T11:37:50+0900",
+    date = "2024-01-04T22:56:06+0900",
     comments = "version: 1.5.3.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-8.5.jar, environment: Java 17.0.9 (Oracle Corporation)"
 )
 public class MemberTransMapperImpl implements MemberTransMapper {
@@ -57,8 +57,8 @@ public class MemberTransMapperImpl implements MemberTransMapper {
 
         companyEntity.companyId( companyDto.getCompanyId() );
         companyEntity.company( companyDto.getCompany() );
-        companyEntity.companyType( companyDto.getCompanyType() );
         companyEntity.employeesNumber( companyDto.getEmployeesNumber() );
+        companyEntity.companyType( companyDto.getCompanyType() );
         companyEntity.establishmentDate( companyDto.getEstablishmentDate() );
         companyEntity.companyHomepage( companyDto.getCompanyHomepage() );
 
