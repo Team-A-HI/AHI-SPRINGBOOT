@@ -168,7 +168,7 @@ public class FileUtilsImpl implements FileUtils {
         String path = staticPath + "resume/" + name + "/" + title + "-수정본" + ".pdf";
         FilenameFilter filter = new FilenameFilter() {
             public boolean accept(File f, String name) {
-                return name.contains(title + "-수정본");
+                return name.contains(name + "-수정본");
             }
         };
         try {
