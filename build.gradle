@@ -21,6 +21,7 @@ repositories {
     mavenCentral()
 }
 
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
@@ -32,15 +33,17 @@ dependencies {
     runtimeOnly 'com.mysql:mysql-connector-j'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    //implementation 'org.mapstruct:mapstruct:1.5.3.Final'
     implementation group: 'org.modelmapper', name: 'modelmapper', version: '2.4.3'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'commons-io:commons-io:2.8.0'
     implementation 'commons-fileupload:commons-fileupload:1.4'
 
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 
 
-    
+
+
+
 
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'com.querydsl:querydsl-jpa:5.0.0:jakarta'
@@ -53,8 +56,10 @@ dependencies {
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.3.Final'
     implementation 'org.springframework.boot:spring-boot-starter-mail'
     implementation 'org.modelmapper:modelmapper:2.4.4'
-    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
     implementation "com.h2database:h2"
+    implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.12.3'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
 }
 
 tasks.named('test') {

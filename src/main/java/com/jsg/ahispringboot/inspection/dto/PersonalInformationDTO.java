@@ -15,7 +15,8 @@ public class PersonalInformationDTO {
 
     private String name;
     private String position;
-    private String dateOfBirth;
-    private String gender;
-    private String department;
+    private String email;
+    private String github;
+    private String phone;
+    private String education;
 }

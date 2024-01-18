@@ -1,6 +1,8 @@
 package com.jsg.ahispringboot.company.dto;
 
+import com.jsg.ahispringboot.company.entity.PostingLike;
 import com.jsg.ahispringboot.member.dto.CompanyDto;
+import com.jsg.ahispringboot.member.dto.LogoDto;
 import lombok.*;
 
 import java.util.List;
@@ -44,6 +46,10 @@ public class PostingDTO {
 
     private List<PostingExperienceDTO> postingExperienceList;
 
+    private List<PostingLike> postingLikeList;
+
     private CompanyDTO company;
+
+
 }
 
